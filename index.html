@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Qawwali</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: #111111;
+    }
+
+    .box {
+      width: 85%;
+      max-width: 380px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 28px;
+      color: #555555;
+    }
+
+    button {
+      width: 100%;
+      height: 130px;
+      border: 2px solid #111111;
+      border-radius: 22px;
+      background: #f2f2f2;
+      color: #111111;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+    #status {
+      margin-top: 18px;
+      font-size: 15px;
+      color: #555555;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h1>🎵 NEW QAWALI</h1>
+    <p>Tap below to play the new qawwali</p>
+
+    <button id="playButton">▶ PLAY QAWALI</button>
+
+    <div id="status">Ready</div>
+  </div>
+
+  <audio id="sound" preload="auto">
+    <source src="don%27t%20play%20ah.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const button = document.getElementById("playButton");
+    const sound = document.getElementById("sound");
+    const status = document.getElementById("status");
+
+    button.addEventListener("click", function () {
+      sound.currentTime = 0;
+
+      sound.play()
+        .then(function () {
+          status.textContent = "🎶 Playing New Qawwali...";
+        })
+        .catch(function () {
+          status.textContent = "Audio file not found";
+        });
+    });
+  </script>
+</body>
+</html>
+
+don't play ah.mp3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
